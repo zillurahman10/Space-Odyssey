@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Starfield from './components/Starfield'
+import Starfield from './components/StarField'
 import Home from './pages/Home'
 
 function App() {

@@ -40,3 +40,46 @@ body {
   text-transform: uppercase;
   color: #fbbf24;
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.3; transform: scaleY(0.6); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(251,191,36,0.3); }
+  50%       { box-shadow: 0 0 60px rgba(251,191,36,0.7), 0 0 100px rgba(251,191,36,0.2); }
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes counterSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.animate-fade-up   { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+.animate-fade-in   { animation: fadeIn 1.2s ease forwards; opacity: 0; }
+.animate-float     { animation: float 6s ease-in-out infinite; }
+.animate-glow      { animation: glowPulse 2.5s ease-in-out infinite; }
+.animate-orbit     { animation: orbitSpin 12s linear infinite; }
+.animate-counter   { animation: counterSpin 12s linear infinite; }
+.animate-scroll    { animation: scrollPulse 1.8s ease-in-out infinite; }
