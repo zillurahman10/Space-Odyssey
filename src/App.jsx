@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom'
 import Starfield from './components/StarField'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import Timeline from './pages/Timeline'
+import Missions from './pages/Missions'
 
 function App() {
   return (
@@ -9,7 +11,9 @@ function App() {
       <Starfield />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/"          element={<Home />} />
+        <Route path="/timeline"  element={<Timeline />} />
+        <Route path="/missions"  element={<Missions />} />
       </Routes>
     </div>
   )
