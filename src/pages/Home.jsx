@@ -4,19 +4,19 @@ import { useInView } from '../hooks/useInView'
 function OrbitGraphic() {
   return (
     <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
-      {/* Glow core */}
+
       <div
         className="absolute w-14 h-14 rounded-full animate-glow"
         style={{ background: 'radial-gradient(circle, #fbbf24 0%, #f59e0b 50%, transparent 70%)' }}
       />
-      {/* Inner ring */}
+
       <div
         className="absolute w-28 h-28 rounded-full border border-amber-400/20 animate-orbit"
         style={{ borderStyle: 'dashed' }}
       >
         <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-400" />
       </div>
-      {/* Middle ring */}
+
       <div
         className="absolute w-48 h-48 rounded-full border border-cosmic-400/15 animate-orbit"
         style={{ animationDuration: '18s', borderStyle: 'dashed' }}
@@ -24,7 +24,7 @@ function OrbitGraphic() {
         <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-cosmic-400" />
         <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-2 h-2 rounded-full bg-cosmic-400/50" />
       </div>
-      {/* Outer ring */}
+
       <div
         className="absolute w-64 h-64 md:w-72 md:h-72 rounded-full border border-white/[0.04] animate-counter"
         style={{ animationDuration: '30s' }}
@@ -32,7 +32,7 @@ function OrbitGraphic() {
         <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-star-400/60" />
         <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-mars-400/60" />
       </div>
-      {/* Center label */}
+
       <span className="relative z-10 label-mono text-amber-400/80" style={{ fontSize: '0.6rem' }}>
         SOL
       </span>
@@ -130,10 +130,10 @@ export default function Home() {
   return (
     <main className="relative z-10">
 
-      {/* ══ HERO ══ */}
+
       <section className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-28 pt-20 relative overflow-hidden">
 
-        {/* Ambient glows */}
+
         <div
           className="absolute right-0 top-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(96,165,250,0.04) 0%, transparent 65%)' }}
@@ -145,7 +145,7 @@ export default function Home() {
 
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
 
-          {/* ── Left: Text ── */}
+
           <div className="flex-1 max-w-2xl">
             <p className="label-mono mb-5 animate-fade-up" style={{ animationDelay: '0.1s' }}>
               An Interactive Documentary
@@ -190,8 +190,8 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Mini stats row */}
-            <div
+
+            {/* <div
               className="flex flex-wrap gap-8 mt-10 pt-8 border-t border-white/[0.06] animate-fade-up"
               style={{ animationDelay: '0.75s' }}
             >
@@ -210,7 +210,7 @@ export default function Home() {
                   <p className="text-star-600 text-xs mt-0.5">{l}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
             {/* <div
               className="flex flex-wrap gap-8 mt-10 pt-8 border-t border-white/[0.06] animate-fade-up"
               style={{ animationDelay: '0.75s' }}
@@ -233,9 +233,9 @@ export default function Home() {
             </div> */}
           </div>
 
-          {/* ── Right: Orbit graphic ── */}
+
           <div
-            className="hidden lg:flex flex-1 items-center justify-center animate-fade-in"
+            className="hidden lg:flex flex-1 items-center justify-center animate-fade-in "
             style={{ animationDelay: '0.8s' }}
           >
             <OrbitGraphic />
@@ -243,16 +243,19 @@ export default function Home() {
 
         </div>
 
-        {/* Scroll cue */}
+
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="label-mono text-[9px] text-star-600">scroll to explore</span>
           <div className="w-px h-10 bg-gradient-to-b from-amber-400/60 to-transparent animate-scroll" />
         </div>
       </section>
 
-      {/* ══ STATS STRIP ══ */}
-      <section className="relative z-10 border-y border-white/[0.06]">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
+
+      <section
+        className="flex relative z-10 border-y border-white/[0.06] justify-center mx-auto"
+        style={{ width: "80%", marginTop: "100px" }}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06] w-full">
           {[
             { value: '1957', label: 'First satellite in orbit', delay: '0s' },
             { value: '12', label: 'Humans walked on the Moon', delay: '0.1s' },
@@ -262,12 +265,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ INTRO ══ */}
+
       <section className="px-6 md:px-16 lg:px-28 py-32">
         <IntroSection />
       </section>
 
-      {/* ══ EXPLORE CARDS ══ */}
+
       <section className="px-6 md:px-16 lg:px-28 pb-28">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[

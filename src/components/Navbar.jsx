@@ -30,8 +30,6 @@ export default function Navbar() {
       }}
     >
       <nav className="px-6 md:px-16 lg:px-28 flex items-center justify-between">
-
-        {/* ── Logo ── */}
         <Link
           to="/"
           onClick={() => setMenuOpen(false)}
@@ -56,8 +54,6 @@ export default function Navbar() {
             Space<span className="text-amber-400">Odyssey</span>
           </span>
         </Link>
-
-        {/* ── Desktop links ── */}
         <ul className="hidden md:flex items-center gap-10">
           {links.map(({ to, label }) => (
             <li key={to}>
@@ -78,7 +74,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* ── Mobile hamburger ── */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-[5px] p-2"
@@ -100,7 +95,6 @@ export default function Navbar() {
 
       </nav>
 
-      {/* ── Mobile menu ── */}
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
         style={{ maxHeight: menuOpen ? '300px' : '0' }}

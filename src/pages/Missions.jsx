@@ -49,12 +49,10 @@ function MissionCard({ mission, index }) {
         transitionDelay: `${(index % 3) * 100}ms`,
       }}
     >
-      {/* Top color bar */}
       <div className="h-0.5 w-full" style={{ background: c.bar, opacity: 0.5 }} />
 
       <div className="p-6 flex flex-col gap-4 flex-1">
 
-        {/* Header row */}
         <div className="flex items-start justify-between">
           <span className="text-4xl">{mission.icon}</span>
           <div className="flex flex-col items-end gap-2">
@@ -65,7 +63,6 @@ function MissionCard({ mission, index }) {
           </div>
         </div>
 
-        {/* Title */}
         <div>
           <p className="label-mono text-[9px] text-star-600 mb-1">{mission.agency} · {mission.type}</p>
           <h3
@@ -76,16 +73,13 @@ function MissionCard({ mission, index }) {
           </h3>
         </div>
 
-        {/* Highlight pill */}
         <div className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${c.tag}`}>
           <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${c.dot}`} />
           <span className="label-mono text-[9px]">{mission.highlight}</span>
         </div>
 
-        {/* Description */}
         <p className="text-star-400 text-sm leading-relaxed">{mission.description}</p>
 
-        {/* Expandable */}
         <div
           className="overflow-hidden transition-all duration-500"
           style={{ maxHeight: expanded ? '400px' : '0' }}
@@ -125,7 +119,6 @@ function MissionCard({ mission, index }) {
           </div>
         </div>
 
-        {/* Toggle button */}
         <button
           onClick={() => setExpanded(!expanded)}
           className={`label-mono text-[9px] ${c.text} hover:opacity-70 transition-opacity flex items-center gap-1 mt-auto pt-2`}
@@ -147,7 +140,6 @@ export default function Missions() {
   return (
     <main className="relative z-10 px-6 md:px-16 lg:px-28">
 
-      {/* ── Header ── */}
       <section className="pt-36 pb-16">
         <p className="label-mono mb-4">Landmark Voyages</p>
         <h1
@@ -162,7 +154,6 @@ export default function Missions() {
           of our spacefaring story.
         </p>
 
-        {/* Filter pills */}
         <div className="flex gap-3 mt-8">
           {filters.map(f => (
             <button
@@ -181,7 +172,6 @@ export default function Missions() {
         </div>
       </section>
 
-      {/* ── Cards Grid ── */}
       <section className="pb-28">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((mission, i) => (

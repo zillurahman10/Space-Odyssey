@@ -42,7 +42,6 @@ function EventCard({ event, side }) {
         className={`glass rounded-xl border ${c.border} p-5 cursor-pointer hover:bg-white/[0.02] transition-all duration-300`}
         onClick={() => setExpanded(!expanded)}
       >
-        {/* Meta */}
         <div className={`flex items-center gap-2 mb-3 ${side === 'right' ? 'lg:justify-end' : ''}`}>
           <span className="label-mono text-[9px] text-star-600">{event.date}</span>
           <span>{event.flag}</span>
@@ -51,7 +50,6 @@ function EventCard({ event, side }) {
           </span>
         </div>
 
-        {/* Year + Title */}
         <p className={`label-mono text-[10px] mb-1 ${c.text}`}>{event.year}</p>
         <h3
           className="text-star-100 font-bold mb-3 hover:text-amber-400 transition-colors"
@@ -60,10 +58,8 @@ function EventCard({ event, side }) {
           {event.title}
         </h3>
 
-        {/* Summary */}
         <p className="text-star-400 text-sm leading-relaxed">{event.summary}</p>
 
-        {/* Expanded detail */}
         <div
           className="overflow-hidden transition-all duration-500"
           style={{ maxHeight: expanded ? '300px' : '0' }}
@@ -77,7 +73,6 @@ function EventCard({ event, side }) {
           </div>
         </div>
 
-        {/* Toggle */}
         <button className={`mt-3 label-mono text-[9px] text-star-600 hover:text-amber-400 transition-colors ${side === 'right' ? 'lg:w-full lg:text-right' : ''}`}>
           {expanded ? 'show less ↑' : 'read more ↓'}
         </button>
@@ -94,12 +89,10 @@ function TimelineRow({ event, index }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_60px_1fr] gap-0 mb-8">
 
-      {/* Left slot */}
       <div className="lg:pr-8 pb-4 lg:pb-0">
         {isLeft && <EventCard event={event} side="left" />}
       </div>
 
-      {/* Center spine */}
       <div className="hidden lg:flex flex-col items-center">
         <div
           ref={dotRef}
@@ -109,10 +102,8 @@ function TimelineRow({ event, index }) {
         <div className="w-px flex-1 bg-white/[0.06] mt-1" />
       </div>
 
-      {/* Right slot */}
       <div className="lg:pl-8">
         {!isLeft && <EventCard event={event} side="right" />}
-        {/* Mobile: always show on right */}
         {isLeft && <div className="lg:hidden"><EventCard event={event} side="left" /></div>}
       </div>
 
@@ -135,7 +126,6 @@ export default function Timeline() {
   return (
     <main className="relative z-10 px-6 md:px-16 lg:px-28">
 
-      {/* ── Header ── */}
       <section className="pt-36 pb-16">
         <p className="label-mono mb-4">From Sputnik to Starship</p>
         <h1
@@ -153,12 +143,10 @@ export default function Timeline() {
         </p>
       </section>
 
-      {/* ── Filters ── */}
       <div
         className="sticky top-16 z-30 py-4 -mx-6 px-6 md:-mx-16 md:px-16 lg:-mx-28 lg:px-28 mb-12"
         style={{ background: 'rgba(5,5,8,0.9)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
       >
-        {/* Era */}
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <span className="label-mono text-[9px] text-star-600 mr-1">Era:</span>
           {['All', ...eras].map(era => (
@@ -177,7 +165,6 @@ export default function Timeline() {
           ))}
         </div>
 
-        {/* Category */}
         <div className="flex flex-wrap items-center gap-2">
           <span className="label-mono text-[9px] text-star-600 mr-1">Type:</span>
           {categories.map(cat => (
@@ -197,7 +184,6 @@ export default function Timeline() {
         </div>
       </div>
 
-      {/* ── Timeline ── */}
       <section className="pb-28 relative">
         {filtered.length === 0 ? (
           <div className="text-center py-32">
