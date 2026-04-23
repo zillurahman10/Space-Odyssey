@@ -3,34 +3,34 @@ import { useInView } from '../hooks/useInView'
 import { missions } from '../data/missions'
 
 const colorMap = {
-  amber:  {
+  amber: {
     border: 'border-amber-400/20',
-    text:   'text-amber-400',
-    bg:     'rgba(251,191,36,0.08)',
-    dot:    'bg-amber-400',
-    tag:    'bg-amber-400/10 border-amber-400/20 text-amber-400',
-    bar:    '#fbbf24',
+    text: 'text-amber-400',
+    bg: 'rgba(251,191,36,0.08)',
+    dot: 'bg-amber-400',
+    tag: 'bg-amber-400/10 border-amber-400/20 text-amber-400',
+    bar: '#fbbf24',
   },
   cosmic: {
     border: 'border-cosmic-400/20',
-    text:   'text-cosmic-400',
-    bg:     'rgba(96,165,250,0.08)',
-    dot:    'bg-cosmic-400',
-    tag:    'bg-cosmic-400/10 border-cosmic-400/20 text-cosmic-400',
-    bar:    '#60a5fa',
+    text: 'text-cosmic-400',
+    bg: 'rgba(96,165,250,0.08)',
+    dot: 'bg-cosmic-400',
+    tag: 'bg-cosmic-400/10 border-cosmic-400/20 text-cosmic-400',
+    bar: '#60a5fa',
   },
   mars: {
     border: 'border-mars-400/20',
-    text:   'text-mars-400',
-    bg:     'rgba(248,113,113,0.08)',
-    dot:    'bg-mars-400',
-    tag:    'bg-mars-400/10 border-mars-400/20 text-mars-400',
-    bar:    '#f87171',
+    text: 'text-mars-400',
+    bg: 'rgba(248,113,113,0.08)',
+    dot: 'bg-mars-400',
+    tag: 'bg-mars-400/10 border-mars-400/20 text-mars-400',
+    bar: '#f87171',
   },
 }
 
 const statusStyle = {
-  Active:   'bg-amber-400/10 border-amber-400/30 text-amber-400',
+  Active: 'bg-amber-400/10 border-amber-400/30 text-amber-400',
   Complete: 'bg-white/5 border-white/10 text-star-400',
 }
 
@@ -44,8 +44,8 @@ function MissionCard({ mission, index }) {
       ref={ref}
       className={`glass rounded-xl border ${c.border} overflow-hidden flex flex-col transition-all duration-700`}
       style={{
-        opacity:         inView ? 1 : 0,
-        transform:       inView ? 'translateY(0)' : 'translateY(30px)',
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(30px)',
         transitionDelay: `${(index % 3) * 100}ms`,
       }}
     >
@@ -161,9 +161,9 @@ export default function Missions() {
               onClick={() => setFilter(f)}
               className="label-mono text-[10px] px-4 py-2 rounded-full border transition-all duration-200"
               style={{
-                background:  filter === f ? 'rgba(251,191,36,0.12)' : 'transparent',
-                borderColor: filter === f ? 'rgba(251,191,36,0.4)'  : 'rgba(255,255,255,0.08)',
-                color:       filter === f ? '#fbbf24'                : '#475569',
+                background: filter === f ? 'rgba(251,191,36,0.12)' : 'transparent',
+                borderColor: filter === f ? 'rgba(251,191,36,0.4)' : 'rgba(255,255,255,0.08)',
+                color: filter === f ? '#fbbf24' : '#475569',
               }}
             >
               {f}
