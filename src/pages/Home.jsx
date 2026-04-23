@@ -165,7 +165,7 @@ export default function Home() {
             </h1>
 
             <p
-              className="text-star-400 text-base md:text-lg max-w-lg mb-10 leading-relaxed animate-fade-up"
+              className="text-star-400 text-base md:text-sm max-w-lg mb-10 leading-relaxed animate-fade-up"
               style={{ animationDelay: '0.45s' }}
             >
               From a metal sphere beeping in the dark of 1957 to rovers threading
@@ -244,9 +244,14 @@ export default function Home() {
         </div>
 
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="label-mono text-[9px] text-star-600">scroll to explore</span>
+        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2">
           <div className="w-px h-10 bg-gradient-to-b from-amber-400/60 to-transparent animate-scroll" />
+          <span
+            className="label-mono text-[9px] text-star-600"
+            style={{ writingMode: 'vertical-rl', letterSpacing: '0.2em' }}
+          >
+            scroll to explore
+          </span>
         </div>
       </section>
 
